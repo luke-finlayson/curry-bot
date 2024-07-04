@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curry Order Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Curry Order Form</h1>
+        <form id="orderForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="curry">Type of Curry:</label>
+            <select id="curry" name="curry" required>
+                <option value="Butter Chicken">Butter Chicken</option>
+                <option value="Mango Chicken">Mango Chicken</option>
+                <option value="Chicken Korma">Chicken Korma</option>
+                <option value="Lamb Korma">Lamb Korma</option>
+                <option value="Beef Korma">Beef Korma</option>
+                <option value="Chicken Tikka Masala">Chicken Tikka Masala</option>
+                <option value="Lamb Tikka Masala">Lamb Tikka Masala</option>
+                <option value="Masala Lamb">Masala Lamb</option>
+                <option value="Masala Chicken">Masala Chicken</option>
+                <option value="Beef Saagwala">Beef Saagwala</option>
+                <option value="Chicken Saagwala">Chicken Saagwala</option>
+                <option value="Lamb Saagwala">Lamb Saagwala</option>
+                <option value="Chicken Rogan Josh">Chicken Rogan Josh</option>
+                <option value="Lamb Rogan Josh">Lamb Rogan Josh</option>
+                <option value="Beef Rogan Josh">Beef Rogan Josh</option>
+                <option value="Chicken Kadai">Chicken Kadai</option>
+                <option value="Lamb Kadai">Lamb Kadai</option>
+                <option value="Beef Kadai">Beef Kadai</option>
+                <option value="Chicken Madras">Chicken Madras</option>
+                <option value="Lamb Madras">Lamb Madras</option>
+                <option value="Beef Madras">Beef Madras</option>
+                <option value="Chicken Jaffarazi">Chicken Jaffarazi</option>
+                <option value="Lamb Jaffarazi">Lamb Jaffarazi</option>
+                <option value="Beef Jaffarazi">Beef Jaffarazi</option>
+                <option value="Dai Tadka (Vegetarian)">Dai Tadka (Vegetarian)</option>
+                <option value="Dai Palak (Dhai Spinach) (Vegetarian)">Dai Palak (Dhai Spinach) (Vegetarian)</option>
+                <option value="Dhai Makhani (Vegetarian)">Dhai Makhani (Vegetarian)</option>
+                <option value="Matter Mushroom (Vegetarian)">Matter Mushroom (Vegetarian)</option>
+                <option value="Vegetable Korma (Vegetarian)">Vegetable Korma (Vegetarian)</option>
+                <option value="Aloo Mutter (Vegetarian)">Aloo Mutter (Vegetarian)</option>
+                <option value="Kadai Vegetable (Vegetarian)">Kadai Vegetable (Vegetarian)</option>
+                <option value="Paneer Kofta (Vegetarian)">Paneer Kofta (Vegetarian)</option>
+                <option value="Palak Paneer (Vegetarian)">Palak Paneer (Vegetarian)</option>
+                <option value="Shahi Paneer (Vegetarian)">Shahi Paneer (Vegetarian)</option>
+                <option value="Paneer Makhani (Vegetarian)">Paneer Makhani (Vegetarian)</option>
+                <option value="Bombay Aloo (Vegetarian)">Bombay Aloo (Vegetarian)</option>
+                <option value="Channa Masala (Vegetarian)">Channa Masala (Vegetarian)</option>
+                <option value="Kadai Paneer (Vegetarian)">Kadai Paneer (Vegetarian)</option>
+                <option value="Paneer Butter Masala (Vegetarian)">Paneer Butter Masala (Vegetarian)</option>
+            </select>
+
+            <label for="spice">Spice Level:</label>
+            <select id="spice" name="spice" required>
+                <option value="mild">Mild</option>
+                <option value="medium">Medium</option>
+                <option value="hot">Hot</option>
+            </select>
+
+            <label for="naan">Naan Type:</label>
+            <select id="naan" name="naan" required>
+                <option value="plain">Plain</option>
+                <option value="garlic">Garlic</option>
+            </select>
+
+            <label for="drink">Drink:</label>
+            <select id="drink" name="drink" required>
+                <option value="Coke Can">Coke Can</option>
+                <option value="Coke Zero Can">Coke Zero Can</option>
+                <option value="Sprite Can">Sprite Can</option>
+                <option value="L&P Can">L&P Can</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="result">
+            <h2>Order JSON</h2>
+            <pre id="jsonOutput"></pre>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
