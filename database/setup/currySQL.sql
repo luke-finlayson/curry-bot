@@ -10,4 +10,7 @@ CREATE TABLE Orders (
     CurrentTime Datetime
 );
 
+ALTER USER 'curry'@'%' IDENTIFIED WITH mysql_native_password BY 'strong_password';
+FLUSH PRIVILEGES;
+
 -- INSERT INTO ORDER VALUES('TEST', 'BUTTER CHICKEN', 'HOT','GARLIC', 'COKE', NOW())
