@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:8
     container_name: curry_db
     ports:
       - "3307:3306"
