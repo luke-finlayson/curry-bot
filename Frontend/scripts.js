@@ -23,18 +23,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Function to convert email to name
+  const emailToName = (email) => {
+    const [localPart] = email.split('@');
+    return localPart.split('.').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
+  };
+
   // Function to populate the leaderboard table
   const populateLeaderboard = (data) => {
-    const leaderboardTable = document
-      .getElementById("leaderboard")
-      .getElementsByTagName("tbody")[0];
+    const leaderboardTable = document.getElementById("leaderboard").getElementsByTagName("tbody")[0];
     leaderboardTable.innerHTML = ""; // Clear existing entries
     data.forEach((entry) => {
-      const row = leaderboardTable.insertRow();
-      const nameCell = row.insertCell(0);
-      const pointsCell = row.insertCell(1);
-      nameCell.textContent = entry.name;
-      pointsCell.textContent = entry.totalPoints;
+        const row = leaderboardTable.insertRow();
+        const nameCell = row.insertCell(0);
+        const pointsCell = row.insertCell(1);
+        const name = emailToName(entry.email);
+        nameCell.textContent = name;
+        pointsCell.textContent = entry.totalPoints;
     });
   };
 
@@ -86,9 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
       drink: drink,
     };
 
-    // Display JSON output
-    const jsonOutput = JSON.stringify(order, null, 2);
-    document.getElementById("jsonOutput").textContent = jsonOutput;
     console.log("JSON output:", jsonOutput);
 
     // Send JSON data to API
