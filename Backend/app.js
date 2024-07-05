@@ -1,11 +1,23 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+
 //listen for requests
 const PORT = process.env.PORT || 3000;
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.listen(PORT, () => {
   console.log("Server Listening on PORT:", PORT);
 });
+
 //define an endpoint
 app.get("/status", (request, response) => {
   const status = {
@@ -37,10 +49,17 @@ app.get("/get-order", (request, response) => {
 });
 
 app.post("/set-order", (request, response) => {
-  var query = `Insert into Orders (FullName, CurryType, Spice, NAAN, Drink, CurrentTime) values (${request.body.name}, 
-        ${request.body.curry}, ${request.body.spice}, ${request.body.naan}, ${request.body.drink}), NOW()`;
+  // Calculate the points
+  let points = 1;
+  if (request.body.spice === "Medium") points = 2;
+  if (request.body.spice === "Hot") points = 3;
+
+  var query = `Insert into Orders (Email, CurryType, Spice, NAAN, Drink, Points, CurrentTime) values ('${request.body.email}', 
+        '${request.body.curry}', '${request.body.spice}', '${request.body.naan}', '${request.body.drink}', '${points}', NOW())`;
+
   con.query(query, function (err, result) {
     if (err) response.status(500);
     console.log("1 record inserted.");
+    response.status(200).json({ success: true });
   });
 });

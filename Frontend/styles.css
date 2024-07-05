@@ -160,3 +160,7 @@ tbody td {
         padding: 10px;
     }
 }
+
+#email {
+    text-align: center;
+}
