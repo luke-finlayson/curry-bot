@@ -1,7 +1,5 @@
-
 --Makes the table for a curry order
 CREATE TABLE Orders (
-
     ID INT AUTO_INCREMENT,
     FullName VARCHAR(125),
     CurryType VARCHAR(125),
@@ -12,7 +10,4 @@ CREATE TABLE Orders (
     CurrentTime Datetime
 );
 
-INSERT INTO ORDER VALUES('TEST', 'BUTTER CHICKEN', 'HOT','GARLIC', 'COKE', NOW())
-
-
-
+-- INSERT INTO ORDER VALUES('TEST', 'BUTTER CHICKEN', 'HOT','GARLIC', 'COKE', NOW())
