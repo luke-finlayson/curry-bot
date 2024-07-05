@@ -13,6 +13,8 @@ services:
       MYSQL_PASSWORD: strong_password
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./setup:/docker-entrypoint-initdb.d
+    command: --default-authentication-plugin=mysql_native_password
 
 volumes:
   mysql_data:
